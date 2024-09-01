@@ -69,6 +69,6 @@ To deploy the Python Flask application on Kubernetes, follow these steps:
   kubectl get svc -n <namespace> -o wide
   curl http://<external-ip>:<nodePort>
   ```
-  Replace `<internal-ip>`, `<external-ip>`, and `<nodePort>` with the actual values from your Kubernetes setup.
+  Replace `internal-ip`, `external-ip`, and `nodePort` with the actual values from your Kubernetes setup.
 
 
