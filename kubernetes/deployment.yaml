@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-python-app-deployment
+  namespace: dev
+  labels:
+    app: my-python-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-python-app
+  template:
+    metadata:
+      namespace: dev
+      labels:
+        app: my-python-app
+        k8s-app: metrics-server
+    spec:
+      containers:
+      - name: my-python-app
+        image: seren617/assignment:v3
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+          limits:
+            cpu: "200m"
+            memory: "200Mi"
+      imagePullSecrets:
+      - name: docker-creds
