@@ -32,6 +32,11 @@ docker push <registry/repo:tag>
 ```
 (Replace <name> with the desired name for your Docker image, and <registry/repo:tag> with your Docker registry and repository details.)
 
+- To pull already created docker image from dockerhub:
+```bash
+docker pull seren617/assignment:v3
+```
+
 ## Hosting the Application on Kubernetes
 
 To deploy the Python Flask application on Kubernetes, follow these steps:
